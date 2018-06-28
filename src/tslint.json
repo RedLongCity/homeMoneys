@@ -12,6 +12,7 @@
             "element",
             "redlo",
             "kebab-case"
-        ]
+        ],
+        "import-blacklist": true
     }
 }
