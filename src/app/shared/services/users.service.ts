@@ -14,6 +14,10 @@ export class UsersService {
   getUserByEmail(email: string): Observable<User[]> {
     return this.http.get<User[]>(this.defUrl + 'users/?email=' + email);
   }
+
+  createNewUser(user: User): Observable<User> {
+    return this.http.post<User>(this.defUrl + 'users', user);
+  }
 }
 
 
