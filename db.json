@@ -11,12 +11,6 @@
       "password": "111111",
       "name": "Владимир",
       "id": 2
-    },
-    {
-      "email": "redlongcity@gmail.com",
-      "password": "111111111111",
-      "name": "Владимир Харченко",
-      "id": 3
     }
   ],
   "bill": {
