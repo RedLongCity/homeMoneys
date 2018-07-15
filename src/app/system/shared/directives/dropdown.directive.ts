@@ -1,7 +1,7 @@
 import {Directive, HostBinding, HostListener} from '@angular/core';
 
 @Directive({
-  selector: '[redloDropdown]'
+  selector: '[redlo-dropdown]'
 })
 
 export class DropdownDirective {
@@ -10,5 +10,6 @@ export class DropdownDirective {
   @HostListener('click') onClick() {
     this.isOpen = !this.isOpen;
   }
+
 
 }
