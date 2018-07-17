@@ -75,5 +75,19 @@
       "id": 5,
       "description": "Заправка + проход ТО"
     }
+  ],
+  "currencies" : [
+    {
+      "name" : "EUR",
+      "value" : 0.69
+    },
+    {
+      "name" : "UAH",
+      "value" : 26.69
+    },
+    {
+      "name" : "RU",
+      "value" : 66.05
+    }
   ]
 }

@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Bill} from '../../../shared/models/bill.model';
 import {HttpClient} from '@angular/common/http';
+import {Currency} from '../../../shared/models/currency.model';
 
 @Injectable()
 export class BillService {
@@ -10,11 +11,12 @@ export class BillService {
   }
 
   defBillUrl = 'http://localhost:3000/';
-  defCurrecyUrl = 'http://fixer.io/latest?base=USD';
 
   getBill(): Observable<Bill> {
     return this.http.get<Bill>(this.defBillUrl + 'bill');
   }
 
-  getCurrency()
+  getCurrencies(): Observable<Currency[]> {
+    return this.http.get<Currency[]>(this.defBillUrl + 'currencies');
+  }
 }
