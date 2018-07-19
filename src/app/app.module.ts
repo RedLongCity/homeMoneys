@@ -12,7 +12,7 @@ import {BillService} from './system/shared/services/bill.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

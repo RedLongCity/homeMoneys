@@ -4,14 +4,14 @@
     Страница счета <span class="sparkline bar"></span>
   </h3>
   <div class="pull-right">
-    <button class="btn-sm btn btn-primary-outline">
+    <button class="btn-sm btn btn-primary-outline" (click)="onRefresh()">
       <i class="fa fa-refresh"></i>
     </button>
   </div>
 </div>
 <section class="section">
   <div class="row">
-    <redlo-bill-card></redlo-bill-card>
-    <redlo-currency-card></redlo-currency-card>
+    <redlo-bill-card [bill]="bill" [currencies]="currencies"></redlo-bill-card>
+    <redlo-currency-card [bill]="bill" [currencies]="currencies"></redlo-currency-card>
   </div>
 </section>
