@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {BillService} from '../../shared/services/bill.service';
-import {Bill} from '../../../shared/models/bill.model';
 import {Currency} from '../../../shared/models/currency.model';
 
 @Component({
@@ -10,7 +9,6 @@ import {Currency} from '../../../shared/models/currency.model';
 })
 export class CurrencyCardComponent implements OnInit {
 
-  @Input() bill: Bill;
   @Input() currencies: Currency[];
   date: Date;
 

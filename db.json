@@ -79,15 +79,19 @@
   "currencies" : [
     {
       "name" : "EUR",
-      "value" : 0.69
+      "value" : 0.013
     },
     {
       "name" : "UAH",
-      "value" : 26.69
+      "value" : 0.5
     },
     {
-      "name" : "RU",
-      "value" : 66.05
+      "name" : "RUB",
+      "value" : 0.015
+    },
+    {
+      "name" : "DOL",
+      "value" : 0.016
     }
   ]
 }

@@ -16,6 +16,7 @@ export class BillPageComponent implements OnInit, OnDestroy {
 
   bill: Bill;
   currencies: Currency[];
+  billInCurrencies: Bill[];
   subscription: Subscription;
 
   ngOnInit() {
@@ -31,13 +32,15 @@ export class BillPageComponent implements OnInit, OnDestroy {
     this.subscription = combineLatest(this.billService.getBill(),
       this.billService.getCurrencies())
       .subscribe(([bill, currencies]) => {
+        this.billInCurrencies = [];
         this.bill = bill;
+        this.currencies = currencies;
         currencies.forEach((cur: Currency) => {
           if (this.bill.currency === cur.name) {
-            this.currencies.push({'name': cur.name, 'value': this.bill.value});
+            this.billInCurrencies.push({'currency': cur.name, 'value': this.bill.value});
           } else {
             const mul = cur.value * this.bill.value;
-            this.currencies.push({'name': cur.name, 'value': mul});
+            this.billInCurrencies.push({'currency': cur.name, 'value': mul});
           }
         });
       });

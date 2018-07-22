@@ -13,6 +13,9 @@ import {DropdownDirective} from './shared/directives/dropdown.directive';
 import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
 import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.component';
 import {CurrencyPipe} from '../shared/pipes/currency.pipe';
+import { AddEventComponent } from './records-page/add-event/add-event.component';
+import { AddCategoryComponent } from './records-page/add-category/add-category.component';
+import { EditCategoryComponent } from './records-page/edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import {CurrencyPipe} from '../shared/pipes/currency.pipe';
     DropdownDirective,
     BillCardComponent,
     CurrencyCardComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    AddEventComponent,
+    AddCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [CommonModule,
     SharedModule,

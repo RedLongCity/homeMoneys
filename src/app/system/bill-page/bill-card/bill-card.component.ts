@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Bill} from '../../../shared/models/bill.model';
-import {Currency} from '../../../shared/models/currency.model';
 
 @Component({
   selector: 'redlo-bill-card',
@@ -12,8 +11,7 @@ export class BillCardComponent implements OnInit {
   constructor() {
   }
 
-  @Input() bill: Bill;
-  @Input() currencies: Currency[];
+  @Input() billInCurrencies: Bill[];
 
   ngOnInit() {
   }

@@ -4,11 +4,11 @@
       <div class="title-block">
         <h4 class="title">Счет</h4>
       </div>
-      <div class="row row-sm stats-container" *ngFor="let currency of currencies">
+      <div class="row row-sm stats-container" *ngFor="let bill of billInCurrencies">
         <div class="col-xs-12 stat-col">
-          <div class="stat-icon"> <i [ngClass]="'fa fa-' + (currency.name | redloCurrency)"></i> </div>
+          <div class="stat-icon"> <i [ngClass]="'fa fa-' + (bill.currency | redloCurrency)"></i> </div>
           <div class="stat">
-            <div class="value">{{currency.value}}</div>
+            <div class="value">{{bill.value | number:'1.2'}}</div>
           </div>
           <progress class="progress stat-progress" value="100" max="100">
             <div class="progress">

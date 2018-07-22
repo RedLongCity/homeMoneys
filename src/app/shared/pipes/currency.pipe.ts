@@ -6,17 +6,22 @@ import {Currency} from '../models/currency.model';
 })
 export class CurrencyPipe implements PipeTransform {
 
-  relations = [{
-    name: 'EUR',
-    full: 'euro'
-  },
+  relations = [
     {
       name: 'UAH',
       full: 'btc'
     },
     {
-      name: 'RU',
+      name: 'RUB',
       full: 'rub'
+    },
+    {
+      name: 'DOL',
+      full: 'dollar'
+    },
+    {
+      name: 'EUR',
+      full: 'euro'
     }
   ];
 
