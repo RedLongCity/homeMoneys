@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {CategoryValid} from '../../../shared/models/categoryValid.model';
+import {ValidService} from '../../../shared/services/valid.service';
+import {BillLimitValidator} from '../../../shared/validator/bill.limit.validator';
 
 @Component({
   selector: 'redlo-add-category',
@@ -11,7 +12,8 @@ export class AddCategoryComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor() {
+  constructor(public validService: ValidService,
+              public billLimitValidator: BillLimitValidator) {
   }
 
   ngOnInit() {
@@ -22,11 +24,12 @@ export class AddCategoryComponent implements OnInit {
       ]),
       'limit': new FormControl(null, [
         Validators.required
-      ])
+      ], [this.billLimitValidator.checkBillLimit])
     });
   }
 
   onSubmit() {
+    this.billLimitValidator.checkBillLimit(new FormControl());
+    console.log(this.form);
   }
-
 }
