@@ -8,11 +8,11 @@
     <form>
       <div class="form-group">
         <label class="control-label" for="category">Выберите категорию</label>
-        <select class="form-control" id="category">
-          <option>Option one</option>
-          <option>Option two</option>
-          <option>Option three</option>
-          <option>Option four</option>
+        <select
+          class="form-control"
+          id="category"
+          >
+          <option *ngFor="let category of categories">{{category.name}}</option>
         </select>
       </div>
       <div class="form-group">

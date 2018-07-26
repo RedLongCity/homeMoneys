@@ -32,6 +32,36 @@
       "id": 3,
       "name": "Машина",
       "capacity": 7000
+    },
+    {
+      "name": "Категория",
+      "capacity": 11111,
+      "id": 4
+    },
+    {
+      "name": "Категория2",
+      "capacity": 12121,
+      "id": 5
+    },
+    {
+      "name": "Категория3",
+      "capacity": 33333,
+      "id": 6
+    },
+    {
+      "name": "Категория4",
+      "capacity": 44444,
+      "id": 7
+    },
+    {
+      "name": "Категория5",
+      "capacity": 5555,
+      "id": 8
+    },
+    {
+      "name": "Категория7",
+      "capacity": 15986,
+      "id": 9
     }
   ],
   "events": [
@@ -76,22 +106,22 @@
       "description": "Заправка + проход ТО"
     }
   ],
-  "currencies" : [
+  "currencies": [
     {
-      "name" : "EUR",
-      "value" : 0.013
+      "name": "EUR",
+      "value": 0.013
     },
     {
-      "name" : "UAH",
-      "value" : 0.5
+      "name": "UAH",
+      "value": 0.5
     },
     {
-      "name" : "RUB",
-      "value" : 0.015
+      "name": "RUB",
+      "value": 0.015
     },
     {
-      "name" : "DOL",
-      "value" : 0.016
+      "name": "DOL",
+      "value": 0.016
     }
   ]
 }

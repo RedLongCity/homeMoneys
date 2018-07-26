@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Category} from '../../../shared/models/category.model';
 
 @Component({
   selector: 'redlo-add-event',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEventComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
+
+  @Input() categories: Category[];
 
   ngOnInit() {
   }

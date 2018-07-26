@@ -11,6 +11,7 @@ import {SystemModule} from './system/system.module';
 import {ValidService} from './shared/services/valid.service';
 import {BillService} from './system/shared/services/bill.service';
 import {BillLimitValidator} from './shared/validator/bill.limit.validator';
+import {CategoryService} from './system/shared/services/category.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,12 @@ import {BillLimitValidator} from './shared/validator/bill.limit.validator';
     AppRoutingModule,
     SystemModule
   ],
-  providers: [UsersService, AuthService, ValidService, BillLimitValidator, BillService],
+  providers: [UsersService,
+    AuthService,
+    ValidService,
+    BillLimitValidator,
+    BillService,
+    CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -12,14 +12,20 @@ export class BillLimitValidator {
   public checkBillLimit = (control: FormControl): Promise<any> => {
     return new Promise<any>(resolve => {
       this.billService.getBill().subscribe((bill: Bill) => {
-        if (control.value <= bill.value) {
+        if (control.value <= bill.value && control.value > 0) {
           resolve(null);
         } else {
-          resolve({
-            'overLimit': true
-          });
+          if (control.value <= 0) {
+            resolve({
+              'underLimit': true
+            });
+          } else {
+            resolve({
+              'overLimit': true
+            });
+          }
         }
       });
     });
-  }
+  };
 }

@@ -8,15 +8,15 @@
 <section class="section">
   <div class="row">
     <div class="col-md-6">
-      <redlo-add-event></redlo-add-event>
+      <redlo-add-event [categories]="_categories"></redlo-add-event>
     </div>
     <div class="col-md-6">
-      <redlo-add-category></redlo-add-category>
+      <redlo-add-category (onCategoryAdded)="onCategoryAdded($event)"></redlo-add-category>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <redlo-edit-category></redlo-edit-category>
+      <redlo-edit-category [categories]="_categories"></redlo-edit-category>
     </div>
   </div>
 </section>
