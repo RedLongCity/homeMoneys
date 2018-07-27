@@ -20,4 +20,8 @@ export class CategoryService extends BaseApi {
   public getCategories(): Observable<Category[]> {
     return this.get(this.categoriesDefUrl);
   }
+
+  public putCategory(category: Category): Observable<Category> {
+    return this.put(this.categoriesDefUrl, category);
+  }
 }

@@ -28,4 +28,11 @@ export class RecordsPageComponent implements OnInit {
       });
   }
 
+  onCategoryChanged(category: Category) {
+    this.categoryService.putCategory(category)
+      .subscribe((cat: Category) => {
+        Object.assign(this._categories.find((c) => c.id === cat.id), cat);
+      });
+  }
+
 }

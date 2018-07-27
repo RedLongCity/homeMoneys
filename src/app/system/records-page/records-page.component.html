@@ -16,7 +16,7 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <redlo-edit-category [categories]="_categories"></redlo-edit-category>
+      <redlo-edit-category  [categories]="_categories" (onCategoryChanged)="onCategoryChanged($event)"></redlo-edit-category>
     </div>
   </div>
 </section>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Category} from '../../../shared/models/category.model';
 import {ValidService} from '../../../shared/services/valid.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
@@ -16,10 +16,15 @@ export class EditCategoryComponent implements OnInit {
   }
 
   @Input() categories: Category[];
+  @Output() onCategoryChanged = new EventEmitter<Category>();
 
   form: FormGroup;
+  category: Category = new Category('Название', 1);
 
   ngOnInit() {
+    // if (this.categories.length > 0) {
+    //   this.category = this.categories[0];
+    // }
     this.form = new FormGroup({
       'title': new FormControl(null, [
         Validators.required,
@@ -32,6 +37,11 @@ export class EditCategoryComponent implements OnInit {
   }
 
   onSubmit() {
+    this.onCategoryChanged.emit(this.category);
+  }
+
+  onSelect(category: Category) {
+    this.category = category;
   }
 
 }
