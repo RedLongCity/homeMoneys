@@ -33,6 +33,7 @@ export class BillLimitValidator {
 
   public checkBillLimitAndType = (control?: AbstractControl): Promise<any> => {
     return new Promise<any>(resolve => {
+      console.log(this.type);
       if (this.type === 'income') {
         resolve(null);
       } else {

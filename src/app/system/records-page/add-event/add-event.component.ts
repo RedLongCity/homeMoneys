@@ -1,9 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Category} from '../../../shared/models/category.model';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ValidService} from '../../../shared/services/valid.service';
 import {Event} from '../../../shared/models/event.model';
 import {BillLimitValidator} from '../../../shared/validator/bill.limit.validator';
+import {Bill} from '../../../shared/models/bill.model';
+import {BillService} from '../../shared/services/bill.service';
 
 @Component({
   selector: 'redlo-add-event',
@@ -13,7 +15,8 @@ import {BillLimitValidator} from '../../../shared/validator/bill.limit.validator
 export class AddEventComponent implements OnInit {
 
   constructor(public validService: ValidService,
-              public billLimitValidator: BillLimitValidator) {
+              public billLimitValidator: BillLimitValidator,
+              public billService: BillService) {
   }
 
   @Input() categories: Category[];
@@ -35,7 +38,7 @@ export class AddEventComponent implements OnInit {
           Validators.required
         ],
         [
-          this.billLimitValidator.checkBillLimit
+          this.checkBillLimitAndType.bind(this)
         ]),
       'descr': new FormControl(null, [
         Validators.required,
@@ -52,5 +55,30 @@ export class AddEventComponent implements OnInit {
       new Date(),
       this.descr
     ));
+  }
+
+  public checkBillLimitAndType = (control?: AbstractControl): Promise<any> => {
+    return new Promise<any>(resolve => {
+      console.log(this.type);
+      if (this.type === 'income') {
+        resolve(null);
+      } else {
+        this.billService.getBill().subscribe((bill: Bill) => {
+          if (control.value <= bill.value && control.value > 0) {
+            resolve(null);
+          } else {
+            if (control.value <= 0) {
+              resolve({
+                'underLimit': true
+              });
+            } else {
+              resolve({
+                'overLimit': true
+              });
+            }
+          }
+        });
+      }
+    });
   }
 }
