@@ -12,6 +12,7 @@ import {ValidService} from './shared/services/valid.service';
 import {BillService} from './system/shared/services/bill.service';
 import {BillLimitValidator} from './shared/validator/bill.limit.validator';
 import {CategoryService} from './system/shared/services/category.service';
+import {EventService} from './system/shared/services/event.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {CategoryService} from './system/shared/services/category.service';
     ValidService,
     BillLimitValidator,
     BillService,
-    CategoryService],
+    CategoryService,
+    EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -24,8 +24,8 @@
       "id": 1
     },
     {
-      "name": "Еда",
-      "capacity": 10000,
+      "name": "Еда222",
+      "capacity": 12345,
       "id": 2
     },
     {
@@ -62,6 +62,11 @@
       "name": "Категория7",
       "capacity": 15986,
       "id": 9
+    },
+    {
+      "name": "Категория8",
+      "capacity": 88888,
+      "id": 10
     }
   ],
   "events": [
@@ -104,6 +109,18 @@
       "date": "10.06.2017 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
+    },
+    {
+      "type": "income",
+      "amount": 15,
+      "category": {
+        "name": "Дом",
+        "capacity": 15000,
+        "id": 1
+      },
+      "date": "2018-08-05T20:16:57.696Z",
+      "description": "Описание",
+      "id": 6
     }
   ],
   "currencies": [

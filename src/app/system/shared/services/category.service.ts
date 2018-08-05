@@ -22,6 +22,6 @@ export class CategoryService extends BaseApi {
   }
 
   public putCategory(category: Category): Observable<Category> {
-    return this.put(this.categoriesDefUrl, category);
+    return this.put(`${this.categoriesDefUrl}/${category.id}`, category);
   }
 }

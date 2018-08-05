@@ -5,36 +5,73 @@
     </div>
   </div>
   <div class="card-block">
-    <form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label class="control-label" for="category">Выберите категорию</label>
         <select
           class="form-control"
           id="category"
-          >
-          <option *ngFor="let category of categories">{{category.name}}</option>
+          [(ngModel)]="category"
+          [ngModelOptions]="{standalone: true}"
+        >
+          <option
+            *ngFor="let cat of categories"
+            [ngValue]="cat"
+          >{{cat.name}}
+          </option>
         </select>
       </div>
       <div class="form-group">
         <label class="control-label">Выберите тип</label>
-        <div>
+        <div *ngFor="let t of types">
           <label>
-            <input class="radio" name="radios" type="radio">
-            <span>Доход</span>
-          </label>
-        </div>
-        <div>
-          <label>
-            <input class="radio" name="radios" type="radio" checked>
-            <span>Расход</span>
+            <input
+              class="radio"
+              name="type"
+              type="radio"
+              [value]="t.type"
+              [(ngModel)]="type"
+              [ngModelOptions]="{standalone: true}"
+            >
+            <span>{{t.label}}</span>
           </label>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group"
+           [ngClass]="{'has-error': validService.isInvalidAndTouched(form, 'amount')}"
+      >
         <label class="control-label" for="amount">Введите сумму</label>
-        <input type="number" value="0" id="amount" class="form-control">
+        <input
+          type="number"
+          value="0"
+          [(ngModel)]="amount"
+          id="amount"
+          class="form-control"
+          formControlName="amount">
+        <span class="form-help-text"
+              *ngIf="validService.isReqiredAndTouchedValid(form, 'amount')">Лимит должен быть заполнен</span>
       </div>
-      <button type="submit" class="btn btn-primary">Добавить</button>
+      <div class="form-group"
+           [ngClass]="{'has-error': validService.isInvalidAndTouched(form, 'descr')}"
+      >
+        <label class="control-label" for="amount">Введите описание</label>
+        <input
+          type="text"
+          placeholder="Введите описание"
+          [(ngModel)]="descr"
+          id="descr"
+          class="form-control"
+          formControlName="descr">
+        <span class="form-help-text"
+              *ngIf="validService.isReqiredAndTouchedValid(form, 'descr')">Необходимо описание</span>
+        <span class="form-help-text"
+              *ngIf="validService.isRequiredAndMinLength(form, 'descr')">Название категории должно составлять не менее 6 символов</span>
+      </div>
+      <button
+        [disabled]="!validService.isValidForm(form)"
+        type="submit"
+        class="btn btn-primary">Добавить
+      </button>
     </form>
   </div>
 </div>

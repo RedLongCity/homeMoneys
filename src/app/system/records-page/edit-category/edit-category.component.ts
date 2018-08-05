@@ -19,12 +19,10 @@ export class EditCategoryComponent implements OnInit {
   @Output() onCategoryChanged = new EventEmitter<Category>();
 
   form: FormGroup;
-  category: Category = new Category('Название', 1);
+  category: Category;
 
   ngOnInit() {
-    // if (this.categories.length > 0) {
-    //   this.category = this.categories[0];
-    // }
+    this.category = this.categories[0];
     this.form = new FormGroup({
       'title': new FormControl(null, [
         Validators.required,
@@ -40,8 +38,7 @@ export class EditCategoryComponent implements OnInit {
     this.onCategoryChanged.emit(this.category);
   }
 
-  onSelect(category: Category) {
-    this.category = category;
+  onSelect() {
   }
 
 }
