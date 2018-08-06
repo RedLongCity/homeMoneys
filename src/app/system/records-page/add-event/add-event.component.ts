@@ -57,6 +57,11 @@ export class AddEventComponent implements OnInit {
     ));
   }
 
+  onTypeChanged(type: string) {
+    this.type = type;
+    this.form.get('amount').updateValueAndValidity();
+  }
+
   public checkBillLimitAndType = (control?: AbstractControl): Promise<any> => {
     return new Promise<any>(resolve => {
       console.log(this.type);
@@ -80,5 +85,5 @@ export class AddEventComponent implements OnInit {
         });
       }
     });
-  }
+  };
 }

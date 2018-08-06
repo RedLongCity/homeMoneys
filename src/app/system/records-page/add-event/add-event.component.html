@@ -31,6 +31,7 @@
               type="radio"
               [value]="t.type"
               [(ngModel)]="type"
+              (click)="onTypeChanged(t.type)"
               [ngModelOptions]="{standalone: true}"
             >
             <span>{{t.label}}</span>
