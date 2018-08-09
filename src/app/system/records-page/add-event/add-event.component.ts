@@ -55,6 +55,12 @@ export class AddEventComponent implements OnInit {
       new Date(),
       this.descr
     ));
+    this.form.reset();
+  }
+
+  public reValidAmount(type: string) {
+    this.type = type;
+    this.form.get('amount').updateValueAndValidity();
   }
 
   public checkBillLimitAndType = (control?: AbstractControl): Promise<any> => {

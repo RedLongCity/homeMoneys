@@ -24,11 +24,6 @@
       "id": 1
     },
     {
-      "name": "Еда222",
-      "capacity": 12345,
-      "id": 2
-    },
-    {
       "id": 3,
       "name": "Машина",
       "capacity": 7000
@@ -37,90 +32,44 @@
       "name": "Категория",
       "capacity": 11111,
       "id": 4
-    },
-    {
-      "name": "Категория2",
-      "capacity": 12121,
-      "id": 5
-    },
-    {
-      "name": "Категория3",
-      "capacity": 33333,
-      "id": 6
-    },
-    {
-      "name": "Категория4",
-      "capacity": 44444,
-      "id": 7
-    },
-    {
-      "name": "Категория5",
-      "capacity": 5555,
-      "id": 8
-    },
-    {
-      "name": "Категория7",
-      "capacity": 15986,
-      "id": 9
-    },
-    {
-      "name": "Категория8",
-      "capacity": 88888,
-      "id": 10
     }
   ],
   "events": [
     {
-      "id": 1,
       "type": "income",
-      "amount": 1250,
-      "category": 2,
-      "date": "12.06.2017 19:49:02",
-      "description": "Подарили еду в гостях"
-    },
-    {
-      "id": 2,
-      "type": "outcome",
-      "amount": 1300,
-      "category": 1,
-      "date": "13.06.2017 19:49:02",
-      "description": "Купил посудомоечную машину"
-    },
-    {
-      "type": "income",
-      "amount": 1480,
-      "category": 2,
-      "date": "17.06.2017 14:00:48",
-      "id": 3,
-      "description": "Поход в окей с баллами. Бесплатная еда"
-    },
-    {
-      "type": "outcome",
-      "amount": 2470,
-      "category": 2,
-      "date": "17.06.2017 14:00:58",
-      "id": 4,
-      "description": "Закупка на неделю"
-    },
-    {
-      "type": "outcome",
-      "amount": 4000,
-      "category": 3,
-      "date": "10.06.2017 14:01:58",
-      "id": 5,
-      "description": "Заправка + проход ТО"
-    },
-    {
-      "type": "income",
-      "amount": 15,
+      "amount": 10000,
       "category": {
         "name": "Дом",
         "capacity": 15000,
         "id": 1
       },
-      "date": "2018-08-05T20:16:57.696Z",
-      "description": "Описание",
-      "id": 6
+      "date": "2018-08-09T20:05:29.452Z",
+      "description": "Перекрытие крыши",
+      "id": 1
+    },
+    {
+      "type": "income",
+      "amount": 3500,
+      "category": {
+        "id": 3,
+        "name": "Машина",
+        "capacity": 7000
+      },
+      "date": "2018-08-09T20:05:44.600Z",
+      "description": "Смена масла",
+      "id": 2
+    },
+    {
+      "type": "income",
+      "amount": 3500,
+      "category": {
+        "name": "Категория",
+        "capacity": 11111,
+        "id": 4
+      },
+      "date": "2018-08-09T20:06:03.251Z",
+      "description": "Чето - там",
+      "id": 3
     }
   ],
   "currencies": [

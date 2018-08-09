@@ -16,6 +16,8 @@ import {CurrencyPipe} from '../shared/pipes/currency.pipe';
 import {AddEventComponent} from './records-page/add-event/add-event.component';
 import {AddCategoryComponent} from './records-page/add-category/add-category.component';
 import {EditCategoryComponent} from './records-page/edit-category/edit-category.component';
+import {CategoryColorPipe} from '../shared/pipes/categorycolor.pipe';
+import {CategoryProgressPipe} from '../shared/pipes/categoryprogress.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {EditCategoryComponent} from './records-page/edit-category/edit-category.
     BillCardComponent,
     CurrencyCardComponent,
     CurrencyPipe,
+    CategoryColorPipe,
+    CategoryProgressPipe,
     AddEventComponent,
     AddCategoryComponent,
     EditCategoryComponent

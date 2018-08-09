@@ -1,5 +1,4 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Currency} from '../models/currency.model';
 
 @Pipe({
   name: 'redloCurrency'

@@ -16,8 +16,8 @@ export class RecordsPageComponent implements OnInit {
   }
 
   _categories: Category[];
-  event: Event;
   isLoaded = false;
+  event: Event;
 
   ngOnInit() {
     this.categoryService.getCategories()

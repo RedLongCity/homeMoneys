@@ -31,6 +31,7 @@
               type="radio"
               [value]="t.type"
               [(ngModel)]="type"
+              (click)="reValidAmount(t.type)"
               [ngModelOptions]="{standalone: true}"
             >
             <span>{{t.label}}</span>
@@ -50,7 +51,10 @@
           formControlName="amount">
         <span class="form-help-text"
               *ngIf="validService.isReqiredAndTouchedValid(form, 'amount')">Лимит должен быть заполнен</span>
+        <span class="form-help-text"
+              *ngIf="validService.isTouchedAndCustomError(form, 'amount', 'overLimit')">Превышен лимит бюджета</span>
       </div>
+
       <div class="form-group"
            [ngClass]="{'has-error': validService.isInvalidAndTouched(form, 'descr')}"
       >
@@ -65,7 +69,7 @@
         <span class="form-help-text"
               *ngIf="validService.isReqiredAndTouchedValid(form, 'descr')">Необходимо описание</span>
         <span class="form-help-text"
-              *ngIf="validService.isRequiredAndMinLength(form, 'descr')">Название категории должно составлять не менее 6 символов</span>
+              *ngIf="validService.isRequiredAndMinLength(form, 'descr')">Описание должно составлять не менее 6 символов</span>
       </div>
       <button
         [disabled]="!validService.isValidForm(form)"
