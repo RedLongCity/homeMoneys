@@ -18,6 +18,12 @@ import {AddCategoryComponent} from './records-page/add-category/add-category.com
 import {EditCategoryComponent} from './records-page/edit-category/edit-category.component';
 import {CategoryColorPipe} from '../shared/pipes/categorycolor.pipe';
 import {CategoryProgressPipe} from '../shared/pipes/categoryprogress.pipe';
+import { HistoryChartComponent } from './history-page/history-chart/history-chart.component';
+import { HistoryEventsComponent } from './history-page/history-events/history-events.component';
+import { HistoryDetailComponent } from './history-page/history-detail/history-detail.component';
+import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -36,11 +42,17 @@ import {CategoryProgressPipe} from '../shared/pipes/categoryprogress.pipe';
     CategoryProgressPipe,
     AddEventComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    HistoryChartComponent,
+    HistoryEventsComponent,
+    HistoryDetailComponent,
+    HistoryFilterComponent
   ],
   imports: [CommonModule,
     SharedModule,
-    SystemRoutingModule
+    SystemRoutingModule,
+    BrowserAnimationsModule,
+    NgxChartsModule
   ]
 })
 
