@@ -36,40 +36,28 @@
   ],
   "events": [
     {
-      "type": "income",
-      "amount": 10000,
-      "category": {
-        "name": "Дом",
-        "capacity": 15000,
-        "id": 1
-      },
-      "date": "2018-08-09T20:05:29.452Z",
-      "description": "Перекрытие крыши",
-      "id": 1
-    },
-    {
-      "type": "income",
-      "amount": 3500,
-      "category": {
-        "id": 3,
-        "name": "Машина",
-        "capacity": 7000
-      },
-      "date": "2018-08-09T20:05:44.600Z",
-      "description": "Смена масла",
+      "type": "outcome",
+      "amount": 5000,
+      "category": 1,
+      "date": "2018-08-12T10:07:58.251Z",
+      "description": "Купить продукты",
       "id": 2
     },
     {
-      "type": "income",
-      "amount": 3500,
-      "category": {
-        "name": "Категория",
-        "capacity": 11111,
-        "id": 4
-      },
-      "date": "2018-08-09T20:06:03.251Z",
-      "description": "Чето - там",
+      "type": "outcome",
+      "amount": 5000,
+      "category": 3,
+      "date": "2018-08-12T17:06:57.144Z",
+      "description": "Сменить резину",
       "id": 3
+    },
+    {
+      "type": "outcome",
+      "amount": 8000,
+      "category": 4,
+      "date": "2018-08-12T17:07:12.181Z",
+      "description": "Чето - там",
+      "id": 4
     }
   ],
   "currencies": [

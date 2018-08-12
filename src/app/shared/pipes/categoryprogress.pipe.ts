@@ -4,7 +4,7 @@ import {Pipe, PipeTransform} from '@angular/core';
   name: 'redloCategoryProgress'
 })
 export class CategoryProgressPipe implements PipeTransform {
-  transform(value: { income: number, total: number }, ...args: any[]): any {
-    return (value.  total > 0 ? value.income / value.total : 1) * 100 + '%';
+  transform(value: { outcome: number, total: number }, ...args: any[]): any {
+    return (value.total > 0 ? value.outcome / value.total : 1) * 100 + '%';
   }
 }

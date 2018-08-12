@@ -5,8 +5,8 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class CategoryColorPipe implements PipeTransform {
 
-  transform(value: { income: number, total: number }, ...args: any[]): any {
-    const rel = value.total > 0 ? value.income / value.total : 1;
+  transform(value: { outcome: number, total: number }, ...args: any[]): any {
+    const rel = value.total > 0 ? value.outcome / value.total : 1;
     if (rel > 0.4 && rel < 0.6) {
       return 'info';
     }

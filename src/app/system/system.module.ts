@@ -24,6 +24,7 @@ import { HistoryDetailComponent } from './history-page/history-detail/history-de
 import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {EventFieldPipe} from '../shared/pipes/eventfield.pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     CurrencyPipe,
     CategoryColorPipe,
     CategoryProgressPipe,
+    EventFieldPipe,
     AddEventComponent,
     AddCategoryComponent,
     EditCategoryComponent,

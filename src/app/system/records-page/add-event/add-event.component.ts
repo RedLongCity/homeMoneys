@@ -51,7 +51,7 @@ export class AddEventComponent implements OnInit {
     this.onEventAdded.emit(new Event(
       this.type,
       this.amount,
-      this.category,
+      this.category.id,
       new Date(),
       this.descr
     ));

@@ -3,9 +3,20 @@
     Страница истории <span class="sparkline bar"></span>
   </h3>
 </div>
-<redlo-history-chart></redlo-history-chart>
-
-<redlo-history-events></redlo-history-events>
+<div *ngIf="isDataInit">
+  <redlo-history-chart [data]="data"></redlo-history-chart>
+</div>
+<div
+  *ngIf="!isDataInit">
+  <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+</div>
+<div *ngIf="isDataInit">
+  <redlo-history-events [events]="events" [categories]="categories"></redlo-history-events>
+</div>
+<div
+  *ngIf="!isDataInit">
+  <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+</div>
 
 <redlo-history-filter></redlo-history-filter>
 

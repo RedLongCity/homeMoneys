@@ -34,12 +34,12 @@
             <div class="col-xs-6">
               <p>
                 <span
-                  [ngClass]="'text-' + (balances[c.id] | redloCategoryColor)">{{balances[c.id].income}}</span>
+                  [ngClass]="'text-' + (balances[c.id] | redloCategoryColor)">{{balances[c.id].outcome}}</span>
                 из
                 <span class="text-primary">{{balances[c.id].total}}</span>
                 |
                 осталось <span
-                [ngClass]="'text-' + (balances[c.id] | redloCategoryColor)">{{balances[c.id].total - balances[c.id].income}}</span>
+                [ngClass]="'text-' + (balances[c.id] | redloCategoryColor)">{{balances[c.id].total - balances[c.id].outcome}}</span>
               </p>
             </div>
           </div>

@@ -20,7 +20,7 @@ export class PlanningPageComponent implements OnInit, OnDestroy {
   _categories: Category[];
   isLoaded = false;
   balances: {} = {};
-  orderdEvents: {} = {};
+  orderedEvents: {} = {};
   subscription: Subscription;
 
   ngOnInit() {
@@ -40,19 +40,19 @@ export class PlanningPageComponent implements OnInit, OnDestroy {
 
   calculate() {
     this._categories.forEach(c => {
-      let income = 0;
+      let outcome = 0;
       const incomeEvents: Event[] = [];
       const outcomeEvents: Event[] = [];
-      this.events.filter(e => e.category.id === c.id).forEach(e => {
-        if (e.type === 'income') {
-          income += e.amount;
-          incomeEvents.push(e);
-        } else {
+      this.events.filter(e => e.category === c.id).forEach(e => {
+        if (e.type === 'outcome') {
+          outcome += e.amount;
           outcomeEvents.push(e);
+        } else {
+          incomeEvents.push(e);
         }
       });
-      this.balances[c.id] = {income: income, total: c.capacity};
-      this.orderdEvents[c.id] = {incomeEvents: incomeEvents, outcomeEvents: outcomeEvents};
+      this.balances[c.id] = {outcome: outcome, total: c.capacity};
+      this.orderedEvents[c.id] = {outcomeEvents: outcomeEvents, incomeEvents: incomeEvents};
     });
   }
 
