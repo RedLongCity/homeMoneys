@@ -58,6 +58,14 @@
       "date": "2018-08-12T17:07:12.181Z",
       "description": "Чето - там",
       "id": 4
+    },
+    {
+      "type": "income",
+      "amount": 5000,
+      "category": 1,
+      "date": "2018-08-14T19:38:39.756Z",
+      "description": "Зарплата",
+      "id": 5
     }
   ],
   "currencies": [

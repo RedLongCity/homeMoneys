@@ -11,7 +11,7 @@
               <input
                 type="text"
                 class="form-control"
-                [placeholder]="searchPlaceholder | redloEventField:'plc'"
+                [placeholder]="activeFilter | redloEventField:'plc'"
                 [(ngModel)]="searchValue">
             </div>
             <div class="btn-group" redlo-dropdown>
@@ -19,7 +19,7 @@
                 Параметр
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" *ngFor="let f of filters" >{{f | redloEventField}}</a>
+                <a class="dropdown-item" *ngFor="let f of filters" (click)="onSelectFilter(f)">{{f | redloEventField}}</a>
               </div>
             </div>
           </div>
@@ -37,7 +37,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let e of events; let idx = index">
+            <tr *ngFor="let e of events | redloFilter:searchValue:activeFilter:categories; let idx = index">
               <th scope="row">{{idx + 1}}</th>
               <td>{{e.amount}}</td>
               <td>{{e.date | date}}</td>

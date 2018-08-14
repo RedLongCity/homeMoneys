@@ -17,11 +17,9 @@ export class HistoryEventsComponent implements OnInit {
   @Input() categories: Category[];
   filters: string[] = [];
   exceptions: string[] = ['id', 'description'];
-  searchPlaceholder = '';
+  activeFilter: string;
   searchValue = '';
-  placeholders: string[] = [
 
-  ];
 
   ngOnInit() {
     if (this.events) {
@@ -40,6 +38,10 @@ export class HistoryEventsComponent implements OnInit {
     } else {
       return 'Категория не существует(';
     }
+  }
+
+  onSelectFilter(filter) {
+    this.activeFilter = filter;
   }
 
 }

@@ -42,7 +42,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   initChartData(categories: Category[], events: Event[]) {
     categories.forEach((c) => {
         let capacity = c.capacity;
-        events.filter((event) => event.category.id === c.id)
+        events.filter((event) => event.category === c.id)
           .forEach((e) => e.type === 'income' ? capacity += e.amount : capacity -= e.amount);
         this.data.push({name: c.name, value: capacity});
       }
