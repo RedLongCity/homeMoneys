@@ -18,14 +18,17 @@ import {AddCategoryComponent} from './records-page/add-category/add-category.com
 import {EditCategoryComponent} from './records-page/edit-category/edit-category.component';
 import {CategoryColorPipe} from '../shared/pipes/categorycolor.pipe';
 import {CategoryProgressPipe} from '../shared/pipes/categoryprogress.pipe';
-import { HistoryChartComponent } from './history-page/history-chart/history-chart.component';
-import { HistoryEventsComponent } from './history-page/history-events/history-events.component';
-import { HistoryDetailComponent } from './history-page/history-detail/history-detail.component';
-import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
+import {HistoryChartComponent} from './history-page/history-chart/history-chart.component';
+import {HistoryEventsComponent} from './history-page/history-events/history-events.component';
+import {HistoryDetailComponent} from './history-page/history-detail/history-detail.component';
+import {HistoryFilterComponent} from './history-page/history-filter/history-filter.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {EventFieldPipe} from '../shared/pipes/eventfield.pipe';
 import {FilterPipe} from '../shared/pipes/filter.pipe';
+import {NgSelectModule} from '@ng-select/ng-select';
+import {FormsModule} from '@angular/forms';
+import {MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,11 @@ import {FilterPipe} from '../shared/pipes/filter.pipe';
     SharedModule,
     SystemRoutingModule,
     BrowserAnimationsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    NgSelectModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 

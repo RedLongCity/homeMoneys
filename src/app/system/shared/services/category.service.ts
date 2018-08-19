@@ -13,6 +13,10 @@ export class CategoryService extends BaseApi {
 
   categoriesDefUrl = 'categories';
 
+  public getCategory(id: number): Observable<Category> {
+    return this.get(`${this.categoriesDefUrl}/${id}`);
+  }
+
   public addCategory(category: Category): Observable<Category> {
     return this.post(this.categoriesDefUrl, category);
   }

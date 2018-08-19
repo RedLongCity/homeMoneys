@@ -13,6 +13,10 @@ export class EventService extends BaseApi {
 
   eventsDefUrl = 'events';
 
+  public getEvent(id: number): Observable<Event> {
+    return this.get(`${this.eventsDefUrl}/${id}`);
+  }
+
   public addEvent(event: Event): Observable<Event> {
     return this.post(this.eventsDefUrl, event);
   }

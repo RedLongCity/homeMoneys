@@ -1,10 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {CategoryService} from '../../shared/services/category.service';
 import {EventService} from '../../shared/services/event.service';
-import {Category} from '../../../shared/models/category.model';
 import {Event} from '../../../shared/models/event.model';
-import {combineLatest, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'redlo-history-detail',
@@ -18,27 +17,29 @@ export class HistoryDetailComponent implements OnInit, OnDestroy {
               private eventService: EventService) {
   }
 
-  categories: Category[];
-  events: Event[];
   sub: Subscription;
   isLoaded = false;
   event: Event;
   categoryName: string;
   type: string;
-  eventId: string;
+  eventId: number;
 
   ngOnInit() {
-    this.sub = combineLatest(this.categoryService.getCategories(),
-      this.eventService.getEvents(),
-      this.route.params)
-      .subscribe(([categories, events, params]) => {
-        this.categories = categories;
-        this.events = events;
+    this.sub = this.route.params
+      .subscribe(params => {
         this.eventId = params['id'];
-        this.event = events.find(e => e.id.toString() === this.eventId);
-        this.type = this.event.type === 'outcome' ? 'расход' : 'доход';
-        this.categoryName = categories.find(c => c.id === this.event.category).name;
-        this.isLoaded = true;
+        if (this.eventId) {
+          this.eventService.getEvent(this.eventId)
+            .subscribe(event => {
+              this.event = event;
+              this.type = event.type === 'income' ? 'Доход' : 'Расход';
+              this.categoryService.getCategory(event.category)
+                .subscribe(category => {
+                  this.categoryName = category.name;
+                  this.isLoaded = true;
+                });
+            });
+        }
       });
   }
 

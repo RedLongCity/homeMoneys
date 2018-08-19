@@ -13,6 +13,7 @@ import {BillService} from './system/shared/services/bill.service';
 import {BillLimitValidator} from './shared/validator/bill.limit.validator';
 import {CategoryService} from './system/shared/services/category.service';
 import {EventService} from './system/shared/services/event.service';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {EventService} from './system/shared/services/event.service';
     HttpClientModule,
     AuthModule,
     AppRoutingModule,
-    SystemModule
+    SystemModule,
+    CommonModule
   ],
   providers: [UsersService,
     AuthService,

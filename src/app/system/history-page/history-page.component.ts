@@ -21,6 +21,7 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   sub: Subscription;
   data: { name: string, value: number }[] = [];
   isDataInit = false;
+  isFilterVisible = false;
 
   ngOnInit() {
     this.sub = combineLatest(this.categoryService.getCategories(),
@@ -49,4 +50,18 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
     );
   }
 
+  private toggleFilterVisibility(flag: boolean) {
+    this.isFilterVisible = flag;
+  }
+
+  openFilter() {
+    this.toggleFilterVisibility(true);
+  }
+
+  onFilterApply() {
+  }
+
+  onFilterCancel() {
+    this.toggleFilterVisibility(false);
+  }
 }

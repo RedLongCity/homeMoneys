@@ -1,7 +1,7 @@
 <article class="content">
   <div class="title-block">
     <h3 class="title" *ngIf="isLoaded">
-      <a href="#"><i class="fa fa-arrow-left"></i></a>
+      <a [routerLink]="['/system/history']"><i class="fa fa-arrow-left"></i></a>
       Страница записи № {{eventId}}
       <span class="sparkline bar"></span>
     </h3>
@@ -23,6 +23,7 @@
             <ul>
               <li>Сумма: <strong>{{event.amount + 'Р'}}</strong></li>
               <li>Категория: <strong>{{categoryName}}</strong></li>
+              <li>Описание: <strong>{{event.description}}</strong></li>
             </ul>
           </div>
           <div class="card-footer">{{event.date | date}}</div>

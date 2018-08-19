@@ -1,8 +1,12 @@
-<div class="modal fade">
+<div
+  *ngIf="!isDataInit">
+  <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+</div>
+<div class="modal fade in">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close">
+        <button (click)="closeFilter()" type="button" class="close">
           <span>×</span>
         </button>
         <h4 class="modal-title">Фильтр</h4>
@@ -16,31 +20,27 @@
         </div>
         <div class="form-group">
           <label class="control-label">Выберите тип события</label>
-          <div>
-            <label>
-              <input
-                class="checkbox"
-                type="checkbox"
-              >
-              <span>еуче</span>
-            </label>
-          </div>
+          <ng-select [items]="types"
+                     bindLabel="name"
+                     bindValue="id"
+                     [multiple]="true"
+                     placeholder="Выберите типы события"
+                     [(ngModel)]="selectedTypes">
+          </ng-select>
         </div>
         <div class="form-group">
           <label class="control-label">Выберите категории</label>
-          <div>
-            <label>
-              <input
-                class="checkbox"
-                type="checkbox"
-              >
-              <span>еуче</span>
-            </label>
-          </div>
+          <ng-select [items]="categories_"
+                     bindLabel="name"
+                     bindValue="id"
+                     [multiple]="true"
+                     placeholder="Выберите категории"
+                     [(ngModel)]="selectedCategories">
+          </ng-select>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary">Отмена</button>
-          <button type="button" class="btn btn-primary">Применить</button>
+          <button type="button" (click)="closeFilter()" class="btn btn-secondary">Отмена</button>
+          <button type="button" (click)="fireFiltering()" class="btn btn-primary">Применить</button>
         </div>
       </div>
     </div>
